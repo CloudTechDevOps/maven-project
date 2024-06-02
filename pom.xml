@@ -8,12 +8,38 @@
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-      <dependency>
-       <groupId>org.testng</groupId>
-       <artifactId>testng</artifactId>
-       <version>7.9.0</version>
-       <scope>test</scope>
-     </dependency>
-
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.9.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version> <!-- Adjust version if necessary -->
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.project.App</mainClass> <!-- Specify your main class -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
